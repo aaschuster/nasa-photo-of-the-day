@@ -15,7 +15,7 @@ function App() {
       setData(res.data);
       console.log("data retrieved");
     }).catch(err => console.log(err));
-  }, [Content])
+  }, [])
 
   return (
     <div className="App">
