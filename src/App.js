@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Header from "./header"
+import SubHeader from "./subheader"
 import Content from "./content"
 
 function App() {
@@ -12,18 +13,17 @@ function App() {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
     .then( res => {
       setData(res.data);
+      console.log("data retrieved");
     }).catch(err => console.log(err));
-  }, [])
+  }, [Content])
 
   return (
     <div className="App">
       <Header />
+      <SubHeader title={data.title} date={data.date} />
       <Content 
         copyright={data.copyright}
-        date={data.date}
         url={data.hdurl}
-        mediaType={data["media_type"]}
-        title={data.title} 
       />
     </div>
   );

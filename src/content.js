@@ -2,11 +2,10 @@
 
 import React from "react";
 
-const Content = ( { title, date, url, mediaType, copyright} ) => {
+const Content = ( {url, copyright} ) => {
+    
     return (
         <div id="content">
-            <h2>{title}</h2>
-            <p>{date}</p>
             <img src={url} style={{ height: "80vh" }}/>
             <p>Copyright: {copyright}</p>
         </div>
