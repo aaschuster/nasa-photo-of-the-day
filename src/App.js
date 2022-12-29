@@ -4,17 +4,21 @@ import "./App.css";
 import Header from "./header"
 import SubHeader from "./subheader"
 import Content from "./content"
+import dummyData from "./dummydata"
 
 function App() {
 
   const [ data, setData ] = useState({});
 
   useEffect(() => {
+    setData(dummyData);
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
     .then( res => {
       setData(res.data);
       console.log("data retrieved");
-    }).catch(err => console.log(err));
+    }).catch(err => {
+      console.log(err);
+    });
   }, [])
 
   return (
