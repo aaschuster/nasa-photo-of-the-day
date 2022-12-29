@@ -6,16 +6,11 @@ const StyledSubHeader = styled.div`
     color: dimgray;   
 `;  
 
-const StyledDate =  styled.p`
-    font-style: italic;
-    font-size: 0.8rem;
-`
-
-const SubHeader = ( {title, date} ) => {
+const SubHeader = ( {title, date, StyledSmallText} ) => {
     return (
         <StyledSubHeader>
             <h2>{title}</h2>
-            <StyledDate>{date}</StyledDate>
+            <StyledSmallText>{date}</StyledSmallText>
         </StyledSubHeader>
     )
 }

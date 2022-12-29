@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from 'styled-components';
 import axios from "axios";
 import "./App.css";
 import Header from "./header"
@@ -21,13 +22,20 @@ function App() {
     });
   }, [])
 
+  const StyledSmallText =  styled.p`
+    font-style: italic;
+    font-size: 0.8rem;
+    color: dimgray;
+`
+
   return (
     <div className="App">
       <Header />
-      <SubHeader title={data.title} date={data.date} />
+      <SubHeader title={data.title} date={data.date} StyledSmallText={StyledSmallText} />
       <Content 
         copyright={data.copyright}
         url={data.hdurl}
+        StyledSmallText={StyledSmallText}
       />
     </div>
   );
